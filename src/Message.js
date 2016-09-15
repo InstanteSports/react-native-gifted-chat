@@ -82,7 +82,7 @@ export default class Message extends React.Component {
     return (
       <View>
         {this.renderDay()}
-        {!this.isSameUser(this.props.previousMessage, this.props.currentMessage) && this.props.position !== 'right' && this.props.user.name ?
+        {!this.isSameUser(this.props.previousMessage, this.props.currentMessage) && this.props.position === 'left' && this.props.user.name ?
           <View style={styles[this.props.position].usernameContainer}><Text style={styles.usernameText}>{this.props.user.name}</Text></View> : null}
         <View style={[styles[this.props.position].container, {
           marginBottom: this.isSameUser(this.props.currentMessage, this.props.nextMessage) ? 2 : 10,
@@ -102,7 +102,7 @@ const styles = {
       flexDirection: 'row',
       alignItems: 'flex-end',
       justifyContent: 'flex-start',
-      marginLeft: 60,
+      marginLeft: 56,
       marginBottom: 3,
       marginRight: 0,
     },

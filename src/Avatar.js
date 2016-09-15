@@ -45,9 +45,9 @@ const styles = {
       marginRight: 8,
     },
     image: {
-      height: 36,
-      width: 36,
-      borderRadius: 18,
+      height: 30,
+      width: 30,
+      borderRadius: 15,
     },
   }),
   right: StyleSheet.create({
@@ -55,9 +55,9 @@ const styles = {
       marginLeft: 8,
     },
     image: {
-      height: 36,
-      width: 36,
-      borderRadius: 18,
+      height: 30,
+      width: 30,
+      borderRadius: 15,
     },
   }),
 };
