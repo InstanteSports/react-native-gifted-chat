@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View,
   StyleSheet,
+  Text,
 } from 'react-native';
 
 import moment from 'moment';
@@ -81,6 +82,8 @@ export default class Message extends React.Component {
     return (
       <View>
         {this.renderDay()}
+        {!this.isSameUser(this.props.previousMessage, this.props.currentMessage) && this.props.position !== 'right' ?
+          <View style={styles[this.props.position].usernameContainer}><Text style={styles.usernameText}>Jonathan Lin</Text></View> : null}
         <View style={[styles[this.props.position].container, {
           marginBottom: this.isSameUser(this.props.currentMessage, this.props.nextMessage) ? 2 : 10,
         }, this.props.containerStyle[this.props.position]]}>
@@ -95,6 +98,14 @@ export default class Message extends React.Component {
 
 const styles = {
   left: StyleSheet.create({
+    usernameContainer: {
+      flexDirection: 'row',
+      alignItems: 'flex-end',
+      justifyContent: 'flex-start',
+      marginLeft: 60,
+      marginBottom: 3,
+      marginRight: 0,
+    },
     container: {
       flexDirection: 'row',
       alignItems: 'flex-end',
@@ -104,6 +115,14 @@ const styles = {
     },
   }),
   right: StyleSheet.create({
+    usernameContainer: {
+      flexDirection: 'row',
+      alignItems: 'flex-end',
+      justifyContent: 'flex-end',
+      marginLeft: 0,
+      marginBottom: 3,
+      marginRight: 8,
+    },
     container: {
       flexDirection: 'row',
       alignItems: 'flex-end',
@@ -112,6 +131,10 @@ const styles = {
       marginRight: 8,
     },
   }),
+  usernameText: {
+     color: 'rgba(34,34,34,0.5)',
+     fontSize: 12,
+  }
 };
 
 Message.defaultProps = {
