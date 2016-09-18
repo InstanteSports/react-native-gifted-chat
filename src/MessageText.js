@@ -71,7 +71,6 @@ const textStyle = {
   lineHeight: 20,
   marginTop: 5,
   marginBottom: 5,
-  paddingBottom: 3,
   marginLeft: 10,
   marginRight: 10,
 };
