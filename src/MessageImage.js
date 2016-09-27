@@ -3,10 +3,7 @@ import {
   Image,
   StyleSheet,
   View,
-  Dimensions,
 } from 'react-native';
-
-const {height, width} = Dimensions.get('window');
 
 export default class MessageImage extends React.Component {
   render() {
@@ -25,8 +22,8 @@ const styles = StyleSheet.create({
   container: {
   },
   image: {
-    width: width,
-    height: null,
+    width: 150,
+    height: 100,
     borderRadius: 13,
     margin: 3,
     resizeMode: 'cover',
